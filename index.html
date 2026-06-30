@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tic Tac Toe</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="background"></div>
+
+    <!-- ================= HOME SCREEN ================= -->
+
+    <section class="home-screen active" id="homeScreen">
+      <div class="logo">
+        <h1>TIC TAC TOE</h1>
+
+        <p>Challenge your friend or beat the computer.</p>
+      </div>
+
+      <div class="mode-selection">
+        <button class="mode-btn" id="friendBtn">
+          <span class="emoji">👥</span>
+
+          <span>Play With Friend</span>
+        </button>
+
+        <button class="mode-btn" id="computerBtn">
+          <span class="emoji">🤖</span>
+
+          <span>Play With Computer</span>
+        </button>
+      </div>
+
+      <div class="difficulty" id="difficultyBox">
+        <h3>Select Difficulty</h3>
+
+        <div class="difficulty-buttons">
+          <button data-level="easy">Easy</button>
+
+          <button data-level="medium">Medium</button>
+
+          <button data-level="hard">Hard</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GAME SCREEN ================= -->
+
+    <section class="game-screen" id="gameScreen">
+      <header>
+        <h2>Tic Tac Toe</h2>
+
+        <button id="homeBtn">Home</button>
+      </header>
+
+      <div class="score-board">
+        <div class="score-card">
+          <h4 id="playerOneName">Player X</h4>
+
+          <h2 id="playerOneScore">0</h2>
+        </div>
+
+        <div class="score-card">
+          <h4>Draw</h4>
+
+          <h2 id="drawScore">0</h2>
+        </div>
+
+        <div class="score-card">
+          <h4 id="playerTwoName">Player O</h4>
+
+          <h2 id="playerTwoScore">0</h2>
+        </div>
+      </div>
+
+      <div class="turn-box">
+        Current Turn
+
+        <span id="currentTurn"> Player X </span>
+      </div>
+
+      <div class="board" id="board">
+        <div class="cell" data-index="0"></div>
+
+        <div class="cell" data-index="1"></div>
+
+        <div class="cell" data-index="2"></div>
+
+        <div class="cell" data-index="3"></div>
+
+        <div class="cell" data-index="4"></div>
+
+        <div class="cell" data-index="5"></div>
+
+        <div class="cell" data-index="6"></div>
+
+        <div class="cell" data-index="7"></div>
+
+        <div class="cell" data-index="8"></div>
+      </div>
+
+      <div class="buttons">
+        <button id="restartBtn">Restart</button>
+
+        <button id="resetBtn">Reset Score</button>
+      </div>
+    </section>
+
+    <!-- ================= RESULT MODAL ================= -->
+
+    <div class="modal" id="resultModal">
+      <div class="modal-box">
+        <h2 id="winnerTitle">Player X Wins</h2>
+
+        <p id="winnerMessage">Congratulations</p>
+
+        <button id="playAgainBtn">Play Again</button>
+      </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

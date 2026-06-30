@@ -1,0 +1,1115 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #07111f;
+  --card: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.15);
+
+  --primary: #22d3ee;
+  --secondary: #3b82f6;
+
+  --success: #22c55e;
+  --danger: #ef4444;
+
+  --white: #ffffff;
+
+  --text: #f8fafc;
+  --text-light: #94a3b8;
+
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+
+  --radius: 20px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+/* ===========================
+BACKGROUND
+=========================== */
+
+.background {
+  position: fixed;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: -10;
+
+  background: linear-gradient(120deg, #081120, #0f1f39, #081120);
+
+  overflow: hidden;
+}
+
+.background::before {
+  content: '';
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  background: #0ea5e9;
+
+  opacity: 0.12;
+
+  filter: blur(120px);
+
+  left: -100px;
+  top: -100px;
+
+  animation: floatOne 12s infinite ease-in-out;
+}
+
+.background::after {
+  content: '';
+
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  background: #2563eb;
+
+  opacity: 0.15;
+
+  filter: blur(120px);
+
+  right: -100px;
+  bottom: -100px;
+
+  animation: floatTwo 14s infinite ease-in-out;
+}
+
+@keyframes floatOne {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(80px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatTwo {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-80px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+COMMON
+=========================== */
+
+button {
+  font-family: inherit;
+
+  cursor: pointer;
+
+  border: none;
+
+  outline: none;
+
+  transition: 0.35s;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+section {
+  width: 100%;
+
+  min-height: 100vh;
+
+  display: none;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-direction: column;
+
+  padding: 40px;
+}
+
+.active {
+  display: flex;
+}
+
+/* ===========================
+HOME
+=========================== */
+
+.logo {
+  text-align: center;
+
+  margin-bottom: 55px;
+}
+
+.logo h1 {
+  font-size: 68px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  background: linear-gradient(90deg, #22d3ee, #3b82f6);
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  margin-bottom: 18px;
+}
+
+.logo p {
+  font-size: 18px;
+
+  color: var(--text-light);
+}
+
+.mode-selection {
+  display: flex;
+
+  gap: 30px;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  margin-bottom: 45px;
+}
+
+.mode-btn {
+  width: 280px;
+
+  height: 160px;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(18px);
+
+  border-radius: var(--radius);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 18px;
+
+  color: white;
+
+  box-shadow: var(--shadow);
+}
+
+.mode-btn:hover {
+  transform: translateY(-8px);
+
+  border-color: var(--primary);
+}
+
+.mode-btn .emoji {
+  font-size: 60px;
+}
+
+.mode-btn span:last-child {
+  font-size: 20px;
+
+  font-weight: 600;
+}
+
+.difficulty {
+  display: none;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 20px;
+}
+
+.difficulty h3 {
+  font-size: 26px;
+}
+
+.difficulty-buttons {
+  display: flex;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+.difficulty-buttons button {
+  padding: 14px 40px;
+
+  background: var(--card);
+
+  color: white;
+
+  border-radius: 14px;
+
+  border: 1px solid var(--border);
+
+  font-size: 17px;
+}
+
+.difficulty-buttons button:hover {
+  background: var(--primary);
+}
+
+/* ===========================
+GAME SCREEN
+=========================== */
+
+.game-screen {
+  display: none;
+}
+
+.game-screen.active {
+  display: flex;
+}
+
+header {
+  width: 100%;
+
+  max-width: 1000px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 35px;
+}
+
+header h2 {
+  font-size: 42px;
+
+  font-weight: 700;
+}
+
+#homeBtn {
+  padding: 14px 28px;
+
+  background: linear-gradient(90deg, #22d3ee, #3b82f6);
+
+  color: white;
+
+  border-radius: 12px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+}
+
+#homeBtn:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 15px 35px rgba(34, 211, 238, 0.3);
+}
+
+/* ===========================
+SCOREBOARD
+=========================== */
+
+.score-board {
+  width: 100%;
+
+  max-width: 900px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+
+  margin-bottom: 35px;
+}
+
+.score-card {
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(20px);
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  text-align: center;
+
+  box-shadow: var(--shadow);
+
+  transition: 0.3s;
+}
+
+.score-card:hover {
+  transform: translateY(-6px);
+
+  border-color: var(--primary);
+}
+
+.score-card h4 {
+  font-size: 18px;
+
+  font-weight: 500;
+
+  color: var(--text-light);
+
+  margin-bottom: 12px;
+}
+
+.score-card h2 {
+  font-size: 42px;
+
+  font-weight: 700;
+
+  color: var(--white);
+}
+
+/* ===========================
+TURN BOX
+=========================== */
+
+.turn-box {
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  padding: 16px 34px;
+
+  border-radius: 50px;
+
+  margin-bottom: 35px;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  backdrop-filter: blur(18px);
+
+  box-shadow: var(--shadow);
+}
+
+#currentTurn {
+  color: var(--primary);
+
+  font-weight: 700;
+}
+
+/* ===========================
+BOARD
+=========================== */
+
+.board {
+  width: 510px;
+
+  height: 510px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-rows: repeat(3, 1fr);
+
+  gap: 14px;
+
+  margin-bottom: 40px;
+}
+
+.cell {
+  background: rgba(255, 255, 255, 0.07);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 20px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 78px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  user-select: none;
+
+  backdrop-filter: blur(15px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.cell:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--primary);
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ===========================
+X & O
+=========================== */
+
+.cell.x {
+  color: #22d3ee;
+
+  text-shadow: 0 0 20px rgba(34, 211, 238, 0.7);
+}
+
+.cell.o {
+  color: #f97316;
+
+  text-shadow: 0 0 20px rgba(249, 115, 22, 0.7);
+}
+
+/* ===========================
+WINNING CELL
+=========================== */
+
+.cell.win {
+  background: #22c55e;
+
+  color: white;
+
+  animation: winAnimation 0.8s infinite alternate;
+}
+
+@keyframes winAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.08);
+  }
+}
+/* ===========================
+BUTTONS
+=========================== */
+
+.buttons {
+  display: flex;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  margin-top: 10px;
+}
+
+.buttons button {
+  padding: 16px 34px;
+
+  border-radius: 14px;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  color: #fff;
+
+  transition: 0.35s;
+}
+
+#restartBtn {
+  background: linear-gradient(90deg, #22d3ee, #3b82f6);
+}
+
+#restartBtn:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 15px 35px rgba(34, 211, 238, 0.35);
+}
+
+#resetBtn {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+#resetBtn:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 15px 35px rgba(239, 68, 68, 0.35);
+}
+
+/* ===========================
+RESULT MODAL
+=========================== */
+
+.modal {
+  position: fixed;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  display: none;
+
+  justify-content: center;
+
+  align-items: center;
+
+  backdrop-filter: blur(12px);
+
+  z-index: 999;
+
+  animation: fadeIn 0.35s ease;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-box {
+  width: 420px;
+
+  max-width: 90%;
+
+  padding: 45px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 28px;
+
+  text-align: center;
+
+  backdrop-filter: blur(25px);
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+
+  animation: popup 0.45s ease;
+}
+
+.modal-box h2 {
+  font-size: 40px;
+
+  margin-bottom: 18px;
+
+  color: #22d3ee;
+
+  font-weight: 700;
+}
+
+.modal-box p {
+  font-size: 18px;
+
+  line-height: 28px;
+
+  margin-bottom: 35px;
+
+  color: #cbd5e1;
+}
+
+#playAgainBtn {
+  padding: 16px 45px;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  border-radius: 14px;
+
+  background: linear-gradient(90deg, #22d3ee, #3b82f6);
+
+  color: white;
+}
+
+#playAgainBtn:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 15px 35px rgba(34, 211, 238, 0.35);
+}
+
+/* ===========================
+ANIMATIONS
+=========================== */
+
+@keyframes popup {
+  0% {
+    transform: scale(0.6);
+
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===========================
+BOARD ENTRY
+=========================== */
+
+.board {
+  animation: boardEntry 0.7s ease;
+}
+
+@keyframes boardEntry {
+  0% {
+    opacity: 0;
+
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+CARD ENTRY
+=========================== */
+
+.score-card {
+  animation: cardEntry 0.6s ease;
+}
+
+@keyframes cardEntry {
+  0% {
+    opacity: 0;
+
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+BUTTON RIPPLE EFFECT
+=========================== */
+
+button {
+  position: relative;
+
+  overflow: hidden;
+}
+
+button::after {
+  content: '';
+
+  position: absolute;
+
+  width: 20px;
+
+  height: 20px;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  border-radius: 50%;
+
+  transform: scale(0);
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+button:active::after {
+  left: 50%;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%) scale(18);
+
+  opacity: 1;
+
+  transition: 0.45s;
+}
+/* ===========================
+RESPONSIVE DESIGN
+=========================== */
+
+@media (max-width: 1000px) {
+  header {
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .score-board {
+    grid-template-columns: 1fr;
+
+    max-width: 420px;
+  }
+
+  .board {
+    width: 420px;
+
+    height: 420px;
+  }
+
+  .cell {
+    font-size: 70px;
+  }
+
+  .logo h1 {
+    font-size: 54px;
+  }
+}
+
+@media (max-width: 700px) {
+  section {
+    padding: 20px;
+  }
+
+  .logo h1 {
+    font-size: 42px;
+  }
+
+  .logo p {
+    font-size: 15px;
+  }
+
+  .mode-btn {
+    width: 100%;
+
+    max-width: 320px;
+
+    height: 135px;
+  }
+
+  .board {
+    width: 330px;
+
+    height: 330px;
+
+    gap: 10px;
+  }
+
+  .cell {
+    font-size: 56px;
+
+    border-radius: 15px;
+  }
+
+  header h2 {
+    font-size: 32px;
+  }
+
+  .turn-box {
+    font-size: 16px;
+
+    padding: 14px 22px;
+  }
+
+  .buttons {
+    flex-direction: column;
+
+    width: 100%;
+
+    align-items: center;
+  }
+
+  .buttons button {
+    width: 250px;
+  }
+
+  .modal-box {
+    padding: 30px;
+  }
+
+  .modal-box h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 420px) {
+  .board {
+    width: 290px;
+
+    height: 290px;
+
+    gap: 8px;
+  }
+
+  .cell {
+    font-size: 46px;
+  }
+
+  .logo h1 {
+    font-size: 34px;
+  }
+
+  .mode-btn {
+    height: 120px;
+  }
+
+  .score-card {
+    padding: 18px;
+  }
+
+  .score-card h2 {
+    font-size: 32px;
+  }
+}
+
+/* ===========================
+SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #081120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22d3ee;
+
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* ===========================
+THINKING ANIMATION
+=========================== */
+
+.thinking {
+  color: #fbbf24;
+
+  font-weight: 700;
+
+  animation: thinking 1s infinite;
+}
+
+@keyframes thinking {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+/* ===========================
+WINNER TEXT
+=========================== */
+
+.winner {
+  color: #22c55e;
+
+  font-weight: 700;
+
+  animation: winnerGlow 1s infinite alternate;
+}
+
+@keyframes winnerGlow {
+  0% {
+    text-shadow: 0 0 8px #22c55e;
+  }
+
+  100% {
+    text-shadow:
+      0 0 28px #22c55e,
+      0 0 50px #22c55e;
+  }
+}
+
+/* ===========================
+CELL CLICK EFFECT
+=========================== */
+
+.cell:active {
+  transform: scale(0.92);
+}
+
+/* ===========================
+GLASS HOVER
+=========================== */
+
+.score-card,
+.mode-btn,
+.turn-box,
+.modal-box {
+  transition: 0.35s;
+}
+
+.score-card:hover,
+.mode-btn:hover,
+.turn-box:hover {
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(34, 211, 238, 0.15);
+}
+
+/* ===========================
+DISABLED BUTTON
+=========================== */
+
+button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+/* ===========================
+FADE CLASSES
+=========================== */
+
+.fade-in {
+  animation: fadeAnimation 0.45s ease;
+}
+
+.fade-out {
+  animation: fadeOut 0.4s ease;
+}
+
+@keyframes fadeAnimation {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/* ===========================
+UTILITY
+=========================== */
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: flex !important;
+}
+
+.center {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+/* ===========================
+SELECTION
+=========================== */
+
+::selection {
+  background: #22d3ee;
+
+  color: #081120;
+}
+
+/* ===========================
+END
+=========================== */
